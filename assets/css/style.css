@@ -1,0 +1,463 @@
+    @import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Press+Start+2P&family=Rowdies:wght@300;400;700&display=swap');
+    body {
+        background-color: #E5E0FF;
+        /* font-family: 'Rowdies', cursive; */
+        font-family: 'Press Start 2P', cursive;
+        margin: 0rem;
+        padding: 0rem;
+    }
+    button {
+        font-family: 'Press Start 2P', cursive;
+        cursor: pointer;
+    }
+    input {
+        font-family: 'Lilita One', cursive;
+    }
+    section {
+        display: none;
+    }
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 5rem 0rem;
+    }
+    .menu .title {
+        color: #00337C;
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin: 1rem 0rem; 
+    }
+    .menu .title span {
+        padding-right: 1rem;
+    }
+    .menu .title span:nth-child(1) {
+        color: #09A8FA;
+    }
+    .menu .title span:nth-child(2) {
+        color: #FF1818;
+    }
+    .menu .subtitle {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+    .menu button {
+        background-color: #8EA7E9;
+        color: #FEFEFE;
+        width: 12rem;
+        height: 3rem;
+        font-size: 1rem;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        margin: 1rem 0rem;
+        transition: 0.8s all ease-in-out;
+    }
+    .menu button:hover {
+        background-color: #7286D3;
+    }
+    .play-setting {
+        display: none;
+    }
+    .play-setting-menu {
+        background-color: #FFF9F9;
+        position: absolute;
+        width: 24rem;
+        height: 20rem;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        outline: none;
+        border-radius: 10px;
+        box-shadow: 0 0 35px 0 rgba(0,0,0,0.25);
+        transform: translate(-50%, -50%);
+    }
+    .play-setting-menu button {
+        background-color: #3C79F5;
+        color: #FEFEFE;
+        width: 15rem;
+        height: 4rem;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        transition: 0.8s all ease-in-out;
+    }
+    .play-setting-menu button:hover {
+        background-color: #1A57D1;
+    }
+    .play-setting-menu button.close {
+        background-color: transparent;
+    }
+    button.close {
+        background-color: transparent;
+        position: absolute;
+        width: 2rem;
+        height: 2rem;
+        top: 3%;
+        right: 3%;
+        outline: none;
+        border: none;
+    }
+    button.close:after {
+        content: 'X';
+        background-color: transparent;
+        color: #354259;
+        transition: 0.5s;
+    }
+    button.close:hover:after {
+        color: #FF7B54;
+    }
+    @media only screen and (max-width: 450px) {
+        .play-setting-menu {
+            width: 18rem;
+            height: 20rem;;
+        }
+    }
+    .navigation { 
+        width: 100%;
+        text-align: center;
+    }
+    .navigation button {
+        background-color: #8EA7E9;
+        color: #FEFEFE;
+        width: 10rem;
+        height: 4rem;
+        margin: 2rem 1rem;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        transition: 0.8s all ease-in-out;
+    }
+    .navigation button:hover,
+    .navigation button:focus {
+        background-color: #7286D3;
+    }
+    .header {
+        color: #00337C;
+        width: 100%;
+        margin-top: 3rem;
+        text-align: center;
+    }
+    .header span {
+        padding-right: 1rem;
+    }
+    .header span:nth-child(1) {
+        color: #09A8FA;
+    }
+    .header span:nth-child(2) {
+        color: #FF1818;
+    }
+    .game {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 3rem 0rem;
+    }   
+    .game .game-wrapper {
+        margin: 0rem 1rem;
+    }
+    .game-info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0.2rem;
+    }    
+    .game-info #turn-count {
+        margin: 0rem 0.3rem;
+    }
+    .game-info #whose-turn.x-mark::before {
+        content: "X";
+        color: #09A8FA;
+    }
+    .game-info #whose-turn.o-mark::before {
+        content: "O";
+        color: #FF1818;
+    }
+    .game-info #whose-turn.x-mark::before,
+    .game-info #whose-turn.o-mark::before {
+        margin-right: 0.3rem;
+    }
+    .player-info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }    
+    .player-info p {
+        margin: 0.5rem 2rem;
+    }
+    .player-info #player1:before {
+        content: "X";
+        color: #09A8FA;
+    }  
+    .player-info #player2:before {
+        content: "O";
+        color: #FF1818;
+    }
+    .player-info #player1:before, 
+    .player-info #player2:before {
+        margin-right: 0.5rem;
+    }
+    @media only screen and (max-width: 575px) {
+        .player-info {
+            flex-direction: column;
+        } 
+    }
+    .board-area {
+        max-width: 30rem;
+        max-height: 30rem;
+        overflow: auto;
+    }
+    .board {
+        background-color: #14279B;
+        display: none;
+        font-family: 'Lilita One', cursive;
+    }
+    .board .cell {
+        background-color: white;
+        min-width: 3rem;
+        width: 5rem;
+        height: 5rem;
+        font-size: 3rem;
+        font-weight: bold;
+        text-align: center;
+    }
+    .board .cell.x-mark,
+    .board .cell.o-mark {
+        background-color: #F3F8FF;
+    }
+    .board .cell.x-mark::before {
+        content: "X";
+        color: #09A8FA;
+    }
+    .board .cell.o-mark::before {
+        content: "O";
+        color: #FF1818;
+    }
+    .board .cell.x-mark.latest ,
+    .board .cell.o-mark.latest {
+        background-color: #DEECFF;
+    }    
+    .board .cell.x-mark.hilight ,
+    .board .cell.o-mark.hilight {
+        background-color: #CAF7E3;
+    }
+    .board .cell.playable:not(.x-mark, .o-mark) {
+        cursor: pointer;
+        transition: 0.8s all ease-in-out;
+    }
+    .board .cell.playable:not(.x-mark, .o-mark):hover {
+        background-color: #dddddd;
+    }
+    @media only screen and (max-width: 575px) {
+        .board-area {
+            max-width: 25rem;
+            max-height: 25rem;
+        }
+    }
+    @media only screen and (max-width: 450px) {
+        .board-area {
+            max-width: 20rem;
+            max-height: 20rem;
+        }
+    }
+    @media only screen and (max-width: 350px) {
+        .board-area {
+            max-width: 18rem;
+            max-height: 18rem;
+        }
+    }
+    .run-replay {
+        display: none;   
+    }
+    .run-replay .game {
+        background-color: #FFF9F9;
+        position: absolute;
+        width: max-content;
+        height: max-content;
+        top: 50%;
+        left: 50%;
+        padding: 2rem;
+        outline: none;
+        border-radius: 10px;
+        box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.25);
+        transform: translate(-50%, -50%);
+    }
+    .replay-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .replay-item {
+        font-family: 'Rowdies', cursive;
+        background-color: #CADEFC;    
+        width: 70%;
+        height: 3rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0.5rem 0rem;
+        padding: 0rem 1rem;
+        outline: none;
+        border: 0px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .replay-item .replay-id {
+        margin: 0rem 1rem;
+    }
+    .replay-item .player {
+        flex: 0.5;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .replay-item .size {
+        margin: 0rem 1rem;
+    }
+    .replay-item .size label {
+        font-weight: lighter;
+    }
+    .replay-item .date-time {
+        margin-right: 1rem;
+    }
+    @media only screen and (max-width: 767px) {
+        .replay-item .player {
+            display: none;
+        }
+    }
+    @media only screen and (max-width: 575px) {
+        .run-replay .game {
+            padding: 1rem 0rem;
+        }
+        .replay-item .replay-id {
+            margin: 0rem;
+        }
+        .replay-item .size {
+            margin: 0rem;
+        }
+        .replay-item .date-time {
+            margin: 0rem;
+        }
+    }
+    .option {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 5rem 0rem;
+    }
+    .option h1 {
+        text-align: center;
+    }
+    .option .option-menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin: 1rem 0rem;
+    }
+    .option .option-menu label,
+    .option .option-menu input {
+        color: #00337C;
+        line-height: 2;
+    }
+    .option .option-menu label {
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-align: end;
+    }
+    .option .option-menu input {
+        font-size: 1.2rem;
+        line-height: 2;
+        text-align: center;
+    }
+    .option .option-menu input,
+    .option .option-menu input:focus,
+    .option .option-button {
+        width: 12rem;
+        outline: none;
+        border: 0px;
+        border-radius: 5px;
+    }
+    .option .option-button {
+        background-color: #8EA7E9;
+        color: #FEFEFE;
+        height: 3rem;
+        font-size: 1rem;
+        margin: 1rem 0rem;
+        transition: 0.8s all ease-in-out;
+    }
+    .option .option-button:hover {
+        background-color: #7286D3;
+    }
+    .option .option-button:nth-child(1) {
+        order: 1;
+    }
+    .option .option-button:nth-child(2) {
+        order: 2;
+    }
+    @media only screen and (max-width: 767px) {
+        .option {
+            margin: 2rem 0rem;
+        }
+        .option .option-menu {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            gap: 5px;
+        }
+        .option .option-menu label,
+        .option .option-menu input,
+        .option .option-button {
+            width: 12rem;
+            text-align: center;
+        }
+        .option .option-button:nth-child(1) {
+            order: 2;
+        }
+        .option .option-button:nth-child(2) {
+            order: 1;
+        }
+    }
+    @media only screen and (max-width: 575px) {
+        .option {
+            margin: 1rem 0rem;
+        }
+    }
+    .credit {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 5rem 0rem;
+    }
+    .credit p {
+        color: #00337C;
+    }
+    .credit h6 {
+        margin: 0.2rem 0rem;
+    }
+    .credit button {
+        background-color: #8EA7E9;
+        color: #FEFEFE;
+        width: 12rem;
+        height: 3rem;
+        font-size: 1rem;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        margin: 2rem 0rem;
+        transition: 0.8s all ease-in-out;
+    }
+    .credit button:hover {
+        background-color: #7286D3;
+    }
