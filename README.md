@@ -5,7 +5,15 @@
 - พัฒนาขึ้นมาเพื่อใช้เป็นส่วนหนึ่งของการสมัครงานกับ digo
 
 ### Installing
-
+```
+git clone https://github.com/NitipatPunoi/xo-game
+```
+```
+cd xo-game
+```
+```
+npm install
+```
 
 #### Game Setting (Option)
 ผู้เล่นสามารถกำหนดขนาดของตารางได้ที่เมนู option ภายในเกม *Main Menu -> Option* 
