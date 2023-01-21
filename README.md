@@ -15,6 +15,8 @@ cd xo-game
 npm install
 ```
 
+Database: `` database/game_replay.sql ``
+
 #### Game Setting (Option)
 ผู้เล่นสามารถกำหนดขนาดของตารางได้ที่เมนู option ภายในเกม *Main Menu -> Option* 
 
