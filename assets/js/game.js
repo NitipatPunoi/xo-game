@@ -63,7 +63,7 @@ function drawing() {
         }).then(function() {
             save && saveReplay()
         })
-    }, 100)
+    }, 500)
     
 }
                 
@@ -194,7 +194,7 @@ function winning(row, col, win_cond = win_condition, pattern) {
         }).then(function() {
             save && saveReplay()
         })
-    }, 100)
+    }, 500)
 }
 
 function winningHilight(row, col) {
