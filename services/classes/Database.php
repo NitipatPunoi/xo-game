@@ -6,7 +6,7 @@ class Database {
     private static $DB_HOST     = 'localhost';
     private static $DB_USERNAME = 'root';
     private static $DB_PASSWORD = '';
-    private static $DB_NAME     = 'digio';
+    private static $DB_NAME     = 'game_replay';
 
     private static $connect = null;
     private static $response = true;
