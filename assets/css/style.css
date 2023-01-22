@@ -222,7 +222,6 @@
     }
     .board .cell {
         background-color: white;
-        min-width: 3rem;
         width: 5rem;
         height: 5rem;
         font-size: 3rem;
