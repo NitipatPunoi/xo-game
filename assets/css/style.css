@@ -140,6 +140,7 @@
         color: #00337C;
         width: 100%;
         margin-top: 3rem;
+        margin-bottom: 2rem;
         text-align: center;
     }
     .header span {
@@ -222,6 +223,8 @@
     }
     .board .cell {
         background-color: white;
+        min-width: 5rem;
+        min-height: 5rem;
         width: 5rem;
         height: 5rem;
         font-size: 3rem;
