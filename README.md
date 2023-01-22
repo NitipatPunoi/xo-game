@@ -30,7 +30,7 @@ Database: `` database/game_replay.sql ``
 
 #### Game Play 
 ผู้เล่นสามารถ เริ่มเกมได้โดยเข้าเมนู *Main Menu -> Let's Play* และเลือก Mode ที่ต้องการเล่น
-- **Single Player** ผู้เล่นจะต่อสู้กับ Bot (Eazy)
+- **Single Player** ผู้เล่นจะต่อสู้กับ Bot
 - **Multiplayer** ผู้เล่นจะต่อสู้กับผู้เล่นด้วยกัน
 
 #### Game Rules
