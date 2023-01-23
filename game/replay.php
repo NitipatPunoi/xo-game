@@ -81,6 +81,8 @@
                 $('#replay-list').empty()
                 let loadReplay = response.result
                 $.each(loadReplay, function(index, item) {
+                    let winner1 = item.result == 1 ? 'win' : ''
+                    let winner2 = item.result == 2 ? 'win' : ''
                     $('#replay-list').append(
                         `<button 
                             class="replay-item" 
@@ -91,7 +93,11 @@
                             data-player1="${item.player1}"
                             data-player2="${item.player2}">
                             <div class="replay-id">${String('0000' + item.id).slice(-4)}</div>
-                            <div class="player">${item.player1} VS ${item.player2}</div>
+                            <div class="player">
+                                <span class="player1 ${winner1}">${item.player1}</span>
+                                <span class="vs">VS</span>
+                                <span class="player2 ${winner2}">${item.player2}</span>
+                            </div>
                             <div class="size">
                                 <label>size</label>
                                 <div>${item.size_row}x${item.size_col}</div>
@@ -138,6 +144,10 @@
                         $('#turn-count').html(1)
                         $('#whose-turn').removeClass()
                         $('#whose-turn').addClass('x-mark')
+                        $('.replay-item .player .player1').css({'position': 'unset'})
+                        $('.replay-item .player .player2').css({'position': 'unset'})
+                        $('.replay-item .player .win').addClass('hidden')
+                        $('.replay-item .player .win').removeClass('win')
                     },
                     willClose: function() {
                         clearInterval(timerInterval)
@@ -201,13 +211,27 @@
         })
 
         $('#run-replay').on('click', '[data-action=close]', function() {
-            $('#run-replay').hide(500)
+            let fadeTime = 500
+            $('#run-replay').hide(fadeTime)
+            setTimeout(function() {
+                $('.replay-item .player .player1').css({'position': 'relative'})
+                $('.replay-item .player .player2').css({'position': 'relative'})
+                $('.replay-item .player .hidden').addClass('win')
+                $('.replay-item .player .hidden').removeClass('hidden')
+            }, fadeTime);
             clearInterval(renderInterval)
         })
 
         $(document).on('keyup', function(event) {
-            if (event.key == "Escape") {
-                $('#run-replay').hide(500)
+            if (event.key == "Escape") {  
+                let fadeTime = 500
+                $('#run-replay').hide(fadeTime)
+                setTimeout(function() {
+                    $('.replay-item .player .player1').css({'position': 'relative'})
+                    $('.replay-item .player .player2').css({'position': 'relative'})
+                    $('.replay-item .player .hidden').addClass('win')
+                    $('.replay-item .player .hidden').removeClass('hidden')
+                }, fadeTime);
                 clearInterval(renderInterval)
             }
         })

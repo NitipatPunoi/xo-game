@@ -77,13 +77,14 @@
             $('section').fadeIn(500)
         }
         
-        function saveReplay() {
+        function saveReplay(result) {
             let formData = new FormData()
                 formData.append('player1', player1)
                 formData.append('player2', player2)
                 formData.append('size_row', size_row_setting)
                 formData.append('size_col', size_col_setting)
                 formData.append('win_cond', win_condition)
+                formData.append('result', result)
                 formData.append('stateLog', JSON.stringify(stateLog))
             $.ajax({  
                 url  : '../services/replay/create.php',

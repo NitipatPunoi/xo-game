@@ -16,6 +16,7 @@ if (Request::getMethod() === 'GET') {
                 replay.size_row,
                 replay.size_col,
                 replay.win_cond, 
+                replay.result, 
                 replay.created_at 
             FROM replay
             ORDER BY replay.id DESC';

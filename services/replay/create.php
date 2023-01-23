@@ -15,6 +15,7 @@
             'size_row' => Request::clean($_POST['size_row']),
             'size_col' => Request::clean($_POST['size_col']),
             'win_cond' => Request::clean($_POST['win_cond']),
+            'result' => Request::clean($_POST['result']),
             'created_at' => date('Y-m-d h:i:s'),
         );
         $sql = 'INSERT INTO replay (
@@ -23,6 +24,7 @@
                     replay.size_row, 
                     replay.size_col, 
                     replay.win_cond, 
+                    replay.result, 
                     replay.created_at
                 ) VALUES (
                     :player1, 
@@ -30,6 +32,7 @@
                     :size_row, 
                     :size_col,
                     :win_cond, 
+                    :result, 
                     :created_at
                 )';
         $query = Database::query($sql, $param);

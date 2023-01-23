@@ -54,14 +54,13 @@ function drawingConditionCheck() {
 }
 
 function drawing() {
-    console.log('draw')
     setTimeout(function() {
         Swal.fire({ 
             icon : 'success',
             title: 'Drawing!',
             confirmButtonColor: '#3085d6', 
         }).then(function() {
-            save && saveReplay()
+            save && saveReplay(0)
         })
     }, 200)
     
@@ -185,6 +184,7 @@ function winning(row, col, win_cond = win_condition, pattern) {
         }
     }
     let name = mark == 'x' ? player1 : player2
+    let winner = mark == 'x' ? 1 : 2
     setTimeout(function() {
         Swal.fire({ 
             icon : 'success',
@@ -192,7 +192,7 @@ function winning(row, col, win_cond = win_condition, pattern) {
             text : name, 
             confirmButtonColor: '#3085d6', 
         }).then(function() {
-            save && saveReplay()
+            save && saveReplay(winner)
         })
     }, 200)
 }
