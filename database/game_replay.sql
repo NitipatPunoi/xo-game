@@ -34,6 +34,7 @@ CREATE TABLE `replay` (
   `size_row` int(11) UNSIGNED NOT NULL,
   `size_col` int(11) UNSIGNED NOT NULL,
   `win_cond` int(11) UNSIGNED NOT NULL,
+  `result` tinyint(1) UNSIGNED NOT NULL,
   `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
